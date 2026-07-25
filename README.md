@@ -4,7 +4,7 @@
 [![Hardware](https://img.shields.io/badge/Hardware-STM32-003594?logo=stmicroelectronics)](#)
 [![Simulation](https://img.shields.io/badge/Simulation-MATLAB%2FSimulink-orange)](#)
 
-> **Status:** Work in Progress
+> **Status:** Work in Progress<br>
 > **Conference Abstract Project:** *10th DeKUT International Conference on Science, Technology, Innovation and Entrepreneurship (STIE 2026)*
 
 
