@@ -49,9 +49,9 @@ The objective of **`pmsm-edge-predictive-maintenance`** is to develop a Software
 ## Planned Tools & Tech Stack
 
 * **Simulation:** MATLAB, Simulink, Simscape Electrical.
+* **Middleware & Orchestration:** Node-RED (MQTT/UDP Telemetry Routing, Real-Time Web Dashboard).
 * **Embedded Hardware & Firmware:** STM32 (Arm Cortex-M), C/C++, STM32CubeIDE, CMSIS-DSP, X-CUBE-AI.
-* **Machine Learning:** TensorFlow / PyTorch, TensorFlow Lite for Microcontrollers.
-* **Federated Learning:** Flower Framework / PyTorch.
+* **Machine Learning & Federated Server:** TensorFlow / PyTorch, TensorFlow Lite for Microcontrollers, Flower Framework.
 
 
 ## License
