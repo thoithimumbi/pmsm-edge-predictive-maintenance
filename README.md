@@ -5,6 +5,7 @@
 [![Simulation](https://img.shields.io/badge/Simulation-MATLAB%2FSimulink-orange)](#)
 
 > **Status:** Work in Progress
+> **Conference Abstract Project:** *10th DeKUT International Conference on Science, Technology, Innovation and Entrepreneurship (STIE 2026)*
 
 
 ## Project Intent
@@ -22,9 +23,10 @@ The objective of **`pmsm-edge-predictive-maintenance`** is to develop a Software
 
 | Stage | System Component | Core Functions & Features | Interface / Data Output |
 | :--- | :--- | :--- | :--- |
-| **1** | **Digital Twin**<br>*(MATLAB / Simulink)* | • PMSM Drivetrain with Field-Oriented Control (FOC)<br>• Synthetic Fault Injection (Stator Shorts, Demagnetization, Bearing Noise) | **Telemetry Streams**<br>*(Phase Currents & Vibration via Serial / UART / CAN)* |
-| **2** | **Edge Processing Node**<br>*(STM32 MCU)* | • Spectral Feature Extraction (CMSIS-DSP FFT)<br>• Real-Time Fault Classification (TinyML via X-CUBE-AI) | **Local Model Updates**<br>*(Model Weights Only)* |
-| **3** | **Federated Aggregation Server** | • Global Model Weight Averaging (FedAvg / FedProx)<br>• Decentralized fleet intelligence updates | **Updated Global Weights**<br>*(Broadcast back to Edge Nodes)* |
+| **1** | **Digital Twin**<br>*(MATLAB / Simulink)* | • PMSM Drivetrain with Field-Oriented Control (FOC)<br>• Synthetic Fault Injection (Stator Shorts, Demagnetization, Bearing Noise) | **UDP / MQTT Streams**<br>*(High-speed phase currents & vibration telemetry)* |
+| **2** | **Telemetry & Gateway Middleware**<br>*(Node-RED)* | • Packet parsing, protocol translation, and serial bridging<br>• Real-time web dashboard for live waveforms and fault alerts<br>• Edge-to-server payload orchestration | **Serial / UART / CAN**<br>*(Formatted telemetry to MCU)*<br><br>**MQTT / HTTP**<br>*(Model weight payloads to server)* |
+| **3** | **Edge Processing Node**<br>*(STM32 MCU)* | • Spectral Feature Extraction (CMSIS-DSP FFT)<br>• Real-Time Fault Classification (TinyML via X-CUBE-AI) | **Local Model Updates**<br>*(Local model weights only)* |
+| **4** | **Federated Aggregation Server**<br>*(PyTorch / Flower)* | • Global Model Weight Averaging (FedAvg / FedProx)<br>• Decentralized fleet intelligence updates | **Updated Global Weights**<br>*(Broadcast back to Edge Nodes via Node-RED)* |
 
 
 ## Project Roadmap
